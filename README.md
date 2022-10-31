@@ -1,27 +1,10 @@
 # go_myapi
 
-# Physics_Sim_Py
-
-"Physics_Sim_Py" is a tutorial of physics simulations with Python.
+"go_myapi is API Backend Server for the blog system.
 
 # DEMO
-
-You can learn how to making cute physics simulations (looks retro game).
-
+sample 
 ![](https://cpp-learning.com/wp-content/uploads/2019/05/pyxel-190505-161951.gif)
-
-This animation is a "Cat playing on trampoline"!
-You can get basic skills for making physics simulations.
-
-# Features
-
-Physics_Sim_Py used [pyxel](https://github.com/kitao/pyxel) only.
-
-```go
-import pyxel
-```
-[Pyxel](https://github.com/kitao/pyxel) is a retro game engine for Python.
-You can feel free to enjoy making pixel art style physics simulations.
 
 # Requirement
 
@@ -30,7 +13,7 @@ You can feel free to enjoy making pixel art style physics simulations.
 Environments under
 
 ```bash
-activate pyxel
+go
 ```
 
 # Installation
@@ -44,9 +27,8 @@ git clone https://github.com/ultra-supara/go_myapi
 # Usage
 
 ```bash
-python demo.py
+go
 ```
-
 # Note
 
 # Author
