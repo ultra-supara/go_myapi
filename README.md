@@ -3,7 +3,7 @@
 "go_myapi is API Backend Server for the blog system.
 
 # DEMO
-sample 
+
 ![](https://media.giphy.com/media/3o7TKrEzvLbsVAud8I/giphy.gif)
 
 # Requirement
