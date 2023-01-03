@@ -4,7 +4,7 @@
 
 # DEMO
 sample 
-![](https://cpp-learning.com/wp-content/uploads/2019/05/pyxel-190505-161951.gif)
+![](https://media.giphy.com/media/3o7TKrEzvLbsVAud8I/giphy.gif)
 
 # Requirement
 
