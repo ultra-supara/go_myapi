@@ -18,14 +18,15 @@ func HelloHandler(w http.ResponseWriter, req *http.Request) {
 
 // todo: articleのハンドラ
 func PostArticleHandler(w http.ResponseWriter, req *http.Request) {
-	//io.WriteString(w, "Posting article\n")
-	article := models.Article1
-	jsonData, err := json.Marshal(article)
-	if err != nil {
-		http.Error(w, "fail to encode json\n", http.StatusInternalServerError)
+	var reqArticle models.Article
+	if err := json.NewDecoder(req.Body).Decode(&reqArticle); err != nil {
+		http.Error(w, "fail to decode json\n", http.StatusBadRequest)
 		return
 	}
-	w.Write(jsonData)
+
+	article := reqArticle
+
+	json.NewEncoder(w).Encode(article)
 }
 
 // todo: article/listのハンドラ , クエリパラメタ取得機能を実装する
@@ -86,7 +87,7 @@ func PostNiceHandler(w http.ResponseWriter, req *http.Request) {
 }
 
 // todo: POST /comment のハンドラ
-func CommentHandler(w http.ResponseWriter, req *http.Request) {
+func PostCommentHandler(w http.ResponseWriter, req *http.Request) {
 	comment := models.Comment1
 	jsonData, err := json.Marshal(comment)
 	if err != nil {

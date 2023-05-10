@@ -5,12 +5,13 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/ultra-supara/go_myapi/handlers"
+	"github.com/ultra-supara/myapi/handlers"
 )
 
 func main() {
 	//Router Rの明示的宣言
 	r := mux.NewRouter()
+
 	//定義したハンドラをサーバーで使うことができるように登録する
 	r.HandleFunc("/hello", handlers.HelloHandler).Methods(http.MethodGet)
 
