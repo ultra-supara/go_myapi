@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/ultra-supara/myapi/handlers"
+	"github.com/ultra-supara/go_myapi/handlers"
 )
 
 func main() {

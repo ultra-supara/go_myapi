@@ -3,8 +3,7 @@ package models
 import "time"
 
 var (
-	// ArticleList is a list of articles
-
+	// CommentList is a list of comments
 	Comment1 = Comment{
 		CommentID: 1,
 		ArticleID: 1,
@@ -20,6 +19,7 @@ var (
 )
 
 var (
+	// ArticleList is a list of articles
 	Article1 = Article{
 		ID:          1,
 		Title:       "first article",
