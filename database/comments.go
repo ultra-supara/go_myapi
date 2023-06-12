@@ -6,7 +6,7 @@ import (
 	"github.com/ultra-supara/go_myapi/models"
 )
 
-//todo: 新規の投稿をDBにinsertする関数
+// 新規投稿をDBにinsertする関数
 func InsertComment(db *sql.DB, comment models.Comment) (models.Comment, error) {
 	const sqlStr = `
 		insert into comments (article_id, message, created_at) values
@@ -26,13 +26,14 @@ func InsertComment(db *sql.DB, comment models.Comment) (models.Comment, error) {
 	return newComment, nil
 }
 
-//todo: 指定IDの記事についたコメント一覧を取得する関数
-func SelectCommentList(db *sql.DB , articleID int) ([]models.Comment, error) {
+// 指定IDの記事についたコメント一覧を取得する関数
+func SelectCommentList(db *sql.DB, articleID int) ([]models.Comment, error) {
 	const sqlStr = `
-			select *
-			from comments
-			where article_id = ?;
+		select *
+		from comments
+		where article_id = ?;
 	`
+
 	rows, err := db.Query(sqlStr, articleID)
 	if err != nil {
 		return nil, err
@@ -51,5 +52,6 @@ func SelectCommentList(db *sql.DB , articleID int) ([]models.Comment, error) {
 
 		commentArray = append(commentArray, comment)
 	}
+
 	return commentArray, nil
 }

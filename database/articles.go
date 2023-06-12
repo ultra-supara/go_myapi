@@ -10,7 +10,7 @@ const (
 	articleNumPerPage = 5
 )
 
-//todo: 新規投稿をDBにinsertする関数
+// 新規投稿をDBにinsertする関数
 func InsertArticle(db *sql.DB, article models.Article) (models.Article, error) {
 	const sqlStr = `
 	insert into articles (title, contents, username, nice, created_at) values
@@ -32,7 +32,7 @@ func InsertArticle(db *sql.DB, article models.Article) (models.Article, error) {
 	return newArticle, nil
 }
 
-//todo: 投稿一覧をDBから取得する関数
+// 投稿一覧をDBから取得する関数
 func SelectArticleList(db *sql.DB, page int) ([]models.Article, error) {
 	const sqlStr = `
 		select article_id, title, contents, username, nice
@@ -57,7 +57,7 @@ func SelectArticleList(db *sql.DB, page int) ([]models.Article, error) {
 	return articleArray, nil
 }
 
-//todo: 投稿IDを指定して、記事データを取得する関数
+// 投稿IDを指定して、記事データを取得する関数
 func SelectArticleDetail(db *sql.DB, articleID int) (models.Article, error) {
 	const sqlStr = `
 		select *
@@ -83,7 +83,7 @@ func SelectArticleDetail(db *sql.DB, articleID int) (models.Article, error) {
 	return article, nil
 }
 
-//todo: いいねの数をupdateする関数
+// いいねの数をupdateする関数
 func UpdateNiceNum(db *sql.DB, articleID int) error {
 	tx, err := db.Begin()
 	if err != nil {
